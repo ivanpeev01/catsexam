@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- CSS code -->
+<meta charset="UTF-8">
+<title>Тестът на котките!</title>
+<link rel="stylesheet" href="style.css">
+<script src="scripts.js"></script>
+
+</head>
+<body>
+
+<!-- Exam title -->
+<h1>Тестът на котките!</h1>
+
+<!-- Student info -->
+<div class="container">
+	<fieldset>
+
+		<!-- Title -->
+		<legend>Попълни своите данни:</legend>
+		
+		<!-- Student name -->
+		<input type="text" id="stuname" name="name" placeholder="Две имена. пр: Митко Митев">
+			
+		<!-- Faculty number -->
+		<input type="text" id="stufn" name="name" size="10" placeholder="Факултетен номер. пр: 21...">
+			
+		<!-- University -->
+		<select id="country" name="country">
+			<option value="australia">ПУ "Паисий Хилендарски", Пловдив</option>
+			<option value="canada">УХТ, Пловдив</option>
+			<option value="usa">СУ "Климент Охридски", София</option>
+		</select>
+		
+		<!-- Button -->
+		<button class="button" onclick="stuInfo()">Запиши</button>
+		
+	</fieldset>
+	<hr>
+</div>
+
+<!-- Ex 1 -->
+<div class="container">
+	
+	<!-- Title -->
+	<h3>1. Подреди изречението:</h3>
+	<div class="gaps">
+		<div class="gap" id="gap1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="gap" id="gap2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="gap" id="gap3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="gap" id="gap4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	</div>
+	
+	<div class="answers">
+	<fieldset>
+		<legend>Провлачи частите на изречението в в клетките по-горе:</legend>
+		<p class="answer_phrase" id="drag1"  draggable="true" ondragstart="drag(event)">дължащо се на добре развитите обонятелни луковици</p>
+		<p class="answer_phrase" id="drag2"  draggable="true" ondragstart="drag(event)">в обонятелния епител в дъното на носната кухина.</p>
+		<p class="answer_phrase" id="drag3"  draggable="true" ondragstart="drag(event)">Котките имат добре развито обоняние,</p>
+		<p class="answer_phrase" id="drag4"  draggable="true" ondragstart="drag(event)">и голямото количество сензорни клетки</p>
+	</fieldset>
+	</div>
+
+	<button class="button" onclick="checkQuestion1()">Провери</button>
+	<label class="truefalse" id="result"></label>
+	
+	<hr>
+
+</div>
+
+<!-- Ex 2 -->
+<div class="container">
+	
+	<!-- Title -->
+	<h3>2. Попълни празните полета</h3>
+	
+	<!-- Text - multiple choises -->
+	<p>
+		Котките живеят в близост до хората от преди поне a)_________ (въпреки че не са изцяло опитомени като кучетата). В б)_________ котките са били използвани за пазачи на складираното зърно от мишки и други гризачи, като наказанието за убита котка в Древен Египет е било в)_________. В наше време котките са едни от най-разпространените домашни любимци. Малък процент от тях (около 1%) са г)_________ (с регистрирано родословие); останалите 99% са кръстоски между различни породи.
+	</p>
+	
+	<!--Answeres-->
+	<fieldset>
+		<legend>Избери правилния отговор:</legend>
+		<form>
+		
+			<!-- Answere 1 -->
+	 		<p>a)
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2010">3.5 хиляди години
+					<span class="checkmark"></span>
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2011">24 милиона години
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2011">2 години
+				</label>
+			</p>
+		
+			<!-- Answere 2 -->
+			<p>б)
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2020">Евгени Минчев
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2021">Стоян Колев
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2022">Древен Египет
+				</label>
+			</p>
+			
+			<!-- Answere 3 -->
+			<p>в)
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2030">100 хил. лева
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2031">смърт
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2032">ракия
+				</label>
+			</p>
+			
+			<!-- Answere 4 -->
+			<p>г)
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2040">чистокръвни
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2041">кучета
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" class="checkbox" value="" id="Ex2042">извънземен разум
+				</label>
+			</p>
+			
+		</form>
+	</fieldset>
+	
+	<!-- Button -->
+	<button class="button" onclick="Ex2()">Провери</button>
+	<label class="truefalse" id="resultEx2"></label>
+	
+	<hr>
+	
+</div>
+
+<!-- Ex 3 -->
+<div class="container">
+	
+	<!-- Title -->
+	<h3>3. Разпознай нарисуваното животно</h3>
+	
+	<!-- The image -->
+	<canvas id="cat" style="margin-left:30px" width="1000" height="250" ></canvas><br>
+	
+	<!-- Answere -->
+	<fieldset>
+		<legend>Животното е:</legend>
+		<input id="question3_answer" type="text" size="30" placeholder="Няма нужда от подсказки, даже!">
+	</fieldset>
+	
+	<!-- Button -->
+	<button class="button" onclick="checkQuestion3()">Провери</button>
+	
+	<!-- Result -->
+	<label class="truefalse" id="resultQuestion3"></label>
+
+	<!-- Script for the image -->
+	<script>
+		var c=document.getElementById("cat");
+		var ctx=c.getContext("2d");
+		ctx.fillStyle="black";
+		ctx.fillRect(0,0,300,200);
+
+		ctx.fillStyle="white";
+		ctx.arc(150,200,80,0,Math.PI*2,true);
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.moveTo(90, 150);
+		ctx.lineTo(80, 85);
+		ctx.lineTo(150, 150);
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.moveTo(210, 150);
+		ctx.lineTo(220, 85);
+		ctx.lineTo(150, 150);
+		ctx.fill();
+	</script>
+	
+	<hr>
+
+</div>
+
+<!-- Ex 4 -->
+<div class="container">
+	
+	<!-- Title -->
+	<h3>4. Отговори на следните въпроси</h3>
+	
+	<!--Answeres-->
+	<fieldset>
+		<legend>Отговаряй само с числа (текст не се брои):</legend>
+		
+		<!-- Question 1 -->
+		<p class="little-p">а). Колко котки има на земята, по последни данни:</p>
+		<input type="text" id="name0" name="name"
+			placeholder="подсказка: започва с 6-умножено по милион и е точно число ;)">
+		
+		<!-- Question 2 -->
+		<p class="little-p">а). Колко живота имат котките:</p>
+		<input type="text" id="name1" name="name"
+			placeholder="подсказка: реално, не по това, което говорят бабите...">
+		
+		<!-- Question 3 -->
+		<p class="little-p">а). От преди колко години, котките живеят в близост до хората:</p>
+		<input type="text" id="name2" name="name"
+			placeholder="подсказка: ако си чел второ упр. ще знаеш">
+		
+	</fieldset>
+	
+	<!-- Button -->
+	<button class="button" onclick="Ex4()">Провери</button>
+	<label class="truefalse" id="resultEx4"></label>
+	
+	<hr>
+
+</div>
+
+<!-- Ex 5 -->
+<div class="container">
+	
+	<!-- Title -->
+	<h3>5. Каква порода е най-голямата котка в света?</h3>
+	
+	<!-- Answeres -->
+	<fieldset>
+		<legend>Само един верен отговор:</legend>
+		<form name="frb">
+			<label for="rb0"><input type="radio" name="r" id="rb0" checked="checked"> Регдол</label><br>
+			<label for="rb1"><input type="radio" name="r" id="rb1"> Бобтейл</label><br>
+			<label for="rb2"><input type="radio" name="r" id="rb2"> Мейн Кун</label><br>
+			<label for="rb3"><input type="radio" name="r" id="rb3"> Бирман</label>
+		</form>
+	</fieldset>
+	
+	<!-- Button -->
+	<button class="button" onclick="Ex5()">Провери</button>
+	<label class="truefalse" id="resultEx5"></label>
+	
+	<hr>
+	
+</div>
+
+<!-- Ex 6 -->
+<div class="container">
+	
+	<!-- Title -->
+	<h3>6. Коя котка е от породата Сфинкс?</h3>
+	
+	<!-- Answeres -->
+	<fieldset>
+		<legend>Отговаряй само с числа (текст не се брои):</legend>
+		
+		<form name="fcb">
+			<label for="cb0"><input type="checkbox" name="c" id="cb0"><img src="pictures/cat1.jpg" width="250" height="250"></label>
+			<label for="cb1"><input type="checkbox" name="c" id="cb1"><img src="pictures/cat5.jpg" width="250" height="250"></label>
+			<label for="cb2"><input type="checkbox" name="c" id="cb2"><img src="pictures/cat3.jpg" width="250" height="250"></label><br>
+			<label for="cb3"><input type="checkbox" name="c" id="cb3"><img src="pictures/cat6.jpg" width="250" height="250"></label>
+			<label for="cb4"><input type="checkbox" name="c" id="cb4"><img src="pictures/cat2.jpg" width="250" height="250"></label>
+			<label for="cb5"><input type="checkbox" name="c" id="cb5"><img src="pictures/cat4.jpg" width="250" height="250"></label>
+		</form>
+		
+	</fieldset>
+	
+	<!-- Button -->
+	<button class="button" onclick="Ex6()">Провери</button>
+	<label class="truefalse" id="resultEx6"></label>
+	
+	<hr>
+	
+</div>
+
+<!-- Show points button -->
+<div class="container">
+	<button class="button" onclick="FinalPoints()">Колко точки имам?</button>
+	<label class="truefalse" id="stuInfo"></label>
+	<label class="truefalse" id="resultPoints"></label>
+</div>
+
+</body>
+</html>
